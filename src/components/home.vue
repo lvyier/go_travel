@@ -1,7 +1,15 @@
 <template>
-  <h1>这是home页面</h1>
+  <home-header></home-header>
 </template>
 <script>
-export default {}
+import HomeHeader from './pages/header.vue'
+export default {
+  components: {
+    HomeHeader
+  }
+}
 </script>
-<style scope></style>
+<style lang="stylus" scope>
+h1
+ font-size: 1.8rem;
+</style>
