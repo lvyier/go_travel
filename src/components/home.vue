@@ -1,10 +1,10 @@
 <template>
   <div>
-    <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-icon></home-icon>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
+    <home-header :city="city"></home-header>
+    <home-swiper :swiperData="swiperData"></home-swiper>
+    <home-icon :iconsList="iconsList"></home-icon>
+    <home-recommend :recommedList="recommedList"></home-recommend>
+    <home-weekend :weekendList="weekendList"></home-weekend>
   </div>
 </template>
 <script>
@@ -13,17 +13,39 @@ import HomeSwiper from './pages/swiper.vue'
 import HomeIcon from './pages/Icon.vue'
 import HomeRecommend from './pages/recommed.vue'
 import HomeWeekend from './pages/weekend.vue'
+// import axios from 'axios'
 export default {
+  data() {
+    return {
+      city: '',
+      swiperData: [],
+      iconsList: [],
+      recommedList: [],
+      weekendList: []
+    }
+  },
   components: {
     HomeHeader,
     HomeSwiper,
     HomeIcon,
     HomeRecommend,
     HomeWeekend
-  }
+  },
+  methods: {},
+
+  created() {
+    this.$http.get('/api/news').then(res => {
+      res = res.data
+      if (res.status === 200) {
+        this.city = res.city
+        this.swiperData = res.swiperList
+        this.iconsList = res.iconsList
+        this.recommedList = res.recommedList
+        this.weekendList = res.weekendList
+      }
+    })
+  },
+  mounted() {}
 }
 </script>
-<style lang="stylus" scope>
-h1
- font-size: 1.8rem;
-</style>
+<style lang="stylus" scoped></style>
