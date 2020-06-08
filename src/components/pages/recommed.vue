@@ -15,29 +15,9 @@
 </template>
 <script>
 export default {
+  props: ['recommedList'],
   data() {
-    return {
-      recommedList: [
-        {
-          id: '001',
-          URLImg: 'https://imgs.qunarzz.com/p/tts7/2005/3d/c41d648b27c1c002.jpg_160x160_282e2e32.jpg',
-          title: '畅游古镇',
-          detail: '古北水镇一日游（50%空座率+分餐制+日游+夜游）'
-        },
-        {
-          id: '002',
-          URLImg: 'https://imgs.qunarzz.com/p/tts4/1912/23/9052593c0e693402.jpg_160x160_23bb7c34.jpg',
-          title: '故宫半日游',
-          detail: '北京故宫+天安门广场+国家博物馆纯玩一日游'
-        },
-        {
-          id: '003',
-          URLImg: 'https://imgs.qunarzz.com/p/tts0/1905/1b/acbaa67ca03c8502.png_160x160_53d17ced.png',
-          title: '五环上门',
-          detail: '北京故宫+八达岭长城1日游|故宫深度半日游'
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>

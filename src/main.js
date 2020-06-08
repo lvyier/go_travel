@@ -7,7 +7,10 @@ import '../src/assets/styles/iconfont.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 import fastClick from 'fastclick'
+import axios from 'axios'
+import '../mock/mock'
 Vue.use(VueAwesomeSwiper)
+Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)

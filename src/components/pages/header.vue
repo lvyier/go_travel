@@ -1,19 +1,25 @@
 <template>
   <div class="header">
     <div class="header_left">
-        <span class="iconfont back_icon">&#xe606;</span>
+      <span class="iconfont back_icon">&#xe606;</span>
     </div>
     <div class="header_center">
-        <span class="iconfont">&#xe643;</span>
-        输入城市/景点/游玩主题</div>
+      <span class="iconfont">&#xe643;</span>
+      输入城市/景点/游玩主题
+    </div>
     <div class="header_right">
-        城市
-        <span class="iconfont arrow_icon">&#xe615;</span>
+      {{ this.city }}
+      <span class="iconfont arrow_icon">&#xe615;</span>
     </div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  props: ['city'],
+  data() {
+    return {}
+  }
+}
 </script>
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl'
