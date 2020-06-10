@@ -9,6 +9,7 @@ import 'swiper/css/swiper.css'
 import fastClick from 'fastclick'
 import axios from 'axios'
 import '../mock/mock'
+import '../mock/city'
 Vue.use(VueAwesomeSwiper)
 Vue.prototype.$http = axios
 
