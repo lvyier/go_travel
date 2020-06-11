@@ -21,6 +21,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~@/assets/styles/varibles.styl'
   .header
+    position: relative;
     height: .86rem;
     line-height: .86rem;
     overflow: hidden;
@@ -30,6 +31,11 @@ export default {
     font-size: .32rem;
     padding-left: .1rem;
     .back_icon
-      float: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: .64rem;
+      text-align: center;
       font-size: .4rem;
+      color: #fff;
 </style>
