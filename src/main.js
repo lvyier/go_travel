@@ -10,6 +10,7 @@ import fastClick from 'fastclick'
 import axios from 'axios'
 import '../mock/mock'
 import '../mock/city'
+import store from './store'
 Vue.use(VueAwesomeSwiper)
 Vue.prototype.$http = axios
 
@@ -17,5 +18,6 @@ Vue.config.productionTip = false
 fastClick.attach(document.body)
 new Vue({
   router,
+  store,
   render: h => h(App)
 }).$mount('#app')

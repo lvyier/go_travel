@@ -8,18 +8,21 @@
       输入城市/景点/游玩主题
     </div>
     <div class="header_right">
-      <router-link to='/city' class="header_city">
-         {{ this.city }}
-      <span class="iconfont arrow_icon">&#xe615;</span>
+      <router-link to="/city" class="header_city">
+        {{ this.city }}
+        <span class="iconfont arrow_icon">&#xe615;</span>
       </router-link>
     </div>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-  props: ['city'],
   data() {
     return {}
+  },
+  computed: {
+    ...mapState(['city'])
   }
 }
 </script>
@@ -47,8 +50,9 @@ export default {
         color: #eee
         border-radius: .1rem;
     .header_right
-        width: 1.24rem;
+        min-width: 1.04rem;
         text-align: center;
+        padding: 0 .1rem;
         .header_city
           color: #fff;
         .arrow_icon

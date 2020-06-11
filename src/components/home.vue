@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-swiper :swiperData="swiperData"></home-swiper>
     <home-icon :iconsList="iconsList"></home-icon>
     <home-recommend :recommedList="recommedList"></home-recommend>
@@ -37,7 +37,6 @@ export default {
     this.$http.get('/api/news').then(res => {
       res = res.data
       if (res.status === 200) {
-        this.city = res.city
         this.swiperData = res.swiperList
         this.iconsList = res.iconsList
         this.recommedList = res.recommedList
