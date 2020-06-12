@@ -1,23 +1,52 @@
 <template>
-  <div class="banner" @click="handleChaneg">
-    <img class="banner_img" src="//img1.qunarzz.com/sight/p0/2003/98/985f7f9721ace766a3.img.jpg_600x330_f43586d7.jpg" alt="" />
-    <div class="banner_info">
-      <div class="banner_title">
-        大连申亚海洋世界(AAAA景区)
-      </div>
-      <div class="banner_number">
-        <span class="iconfont banner_icon">&#xe64a;</span>
-        39
+  <div>
+    <div class="banner" @click="handleChange">
+      <img class="banner_img" src="//img1.qunarzz.com/sight/p0/2003/98/985f7f9721ace766a3.img.jpg_600x330_f43586d7.jpg" alt="" />
+      <div class="banner_info">
+        <div class="banner_title">
+          大连申亚海洋世界(AAAA景区)
+        </div>
+        <div class="banner_number">
+          <span class="iconfont banner_icon">&#xe64a;</span>
+          39
+        </div>
       </div>
     </div>
+    <common-gallery :imgs="imgs" v-show="show" @change="change"></common-gallery>
   </div>
 </template>
 <script>
+import commonGallery from '../../../assets/common/gallery.vue'
 export default {
-  methods: {
-    handleChaneg() {
-      this.$emit('change')
+  data() {
+    return {
+      show: false,
+      imgs: [
+        {
+          id: '001',
+          URLImg: '//img1.qunarzz.com/sight/p0/2003/8a/8ac9cb1b016b1244a3.img.jpg_r_800x800_326d301a.jpg'
+        },
+        {
+          id: '002',
+          URLImg: '//img1.qunarzz.com/sight/p0/2003/b2/b258a766a5caeaa8a3.img.jpg_r_800x800_e3b00f7a.jpg'
+        },
+        {
+          id: '003',
+          URLImg: '//img1.qunarzz.com/sight/p0/2003/e0/e040c803f2da31c1a3.img.jpg_r_800x800_2ac51443.jpg'
+        }
+      ]
     }
+  },
+  methods: {
+    handleChange() {
+      this.show = true
+    },
+    change() {
+      this.show = false
+    }
+  },
+  components: {
+    commonGallery
   }
 }
 </script>
